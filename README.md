@@ -19,7 +19,7 @@ This is a project using face_recognition package to identify people by photo.(No
 ![咕咕咕](https://p.pstatp.com/origin/ffca0000da8fe40c246c)
 
 Above is a famous Chinese Meme meaning something will (definitely not) come.
-
+(Ignore the water print plz)
 # About License
 MIT License
 
