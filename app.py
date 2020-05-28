@@ -13,7 +13,6 @@ app = Flask(__name__)
 r = redis.Redis(host='localhost', port=6379, db=0)
 names = r.keys()
 
-
 def fromRedis(r, key):
     # r for redis
     encoded = r.get(key)
@@ -45,17 +44,17 @@ def get_frame():
     except:
         return 'image format error'
     unknown_face_encodings = face_recognition.face_encodings(image)
-    print(unknown_face_encodings[0])
+    # print(unknown_face_encodings[0])
     if len(unknown_face_encodings[0]) > 0:
         pass
     else:
         return 'no face in image!'
-    print(names)
+    # print(names)
     Matched = False
     Matched_Name = ''
     for key in names:
         temp_face_data = fromRedis(r, key).tolist()
-        print((key))
+        # print((key))
         match_results = face_recognition.compare_faces(
             [temp_face_data], unknown_face_encodings[0])
         # print(match_results)
